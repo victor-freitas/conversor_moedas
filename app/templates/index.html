@@ -26,7 +26,7 @@
                 
                 <div class="col-sm-3 col-lg-2">
                     
-                    <select class="form-select" name="firstCurrency" placeholder="Selecione a primeira moeda">
+                    <select class="form-select" name="first">
                         <option value ="USD" selected>USD</option>
                         <option value ="BRL">BRL</option>
                         <option value ="EUR">EUR</option>
@@ -40,7 +40,7 @@
                 
                 <div class="col-sm-3 col-lg-2">
                     
-                    <select class="form-select" name="secondCurrency" placeholder="Selecione a segunda moeda">
+                    <select class="form-select" name="second">
                         <option value ="USD">USD</option>
                         <option value ="BRL" selected>BRL</option>
                         <option value ="EUR">EUR</option>
@@ -80,13 +80,13 @@
         {% if info %}
         <div  class="converted-value">
 
-            <h5>Converção Feita</h5>
+            <h5>Converção Realizada</h5>
 
             <div class="form-group">
 
                 <div class="input-group">
-
-                    <span class="input-group-text bg-success text-white lg">{{info.amount}} {{info.firstCurrency}} </span>
+                    <!-- Puxa do default.py o valor e a primeira moeda escolhida, -->
+                    <span class="input-group-text bg-success text-white lg">{{info.amount}} {{info.first}} = {{info.firstCurrency}}</span>
 
                     <div class="form-control bg-success text-white" id="total">
 
@@ -94,7 +94,7 @@
 
                     </div>
 
-                  </div>
+                </div>
 
             </div>
 
