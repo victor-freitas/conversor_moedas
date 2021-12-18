@@ -7,8 +7,7 @@ api_access_key = "1b7ea67363e09e5c571cc1fad4ae7d77"
 url = "http://data.fixer.io/api/latest?access_key="+api_access_key
 
 
-
-@app.route("/index" , methods = ["GET","POST"])
+@app.route("/" , methods = ["GET","POST"])
 def index():
     if request.method == "POST":
         firstCurrency = request.form.get("first")                   #'pega' o primeiro valor dado pelo usuário no HTML.
