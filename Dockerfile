@@ -2,10 +2,15 @@ FROM python:3
 
 WORKDIR /app
 
-COPY requirements.txt ./
+RUN apt-get update \
+    apt-get install -y \
+    python3 \
+    python3-pip
 
-RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD [ "python", "run.py" ]
+RUN pip3 install --no-cache-dir -r requirements.txt
+
+CMD python3 run.py
+
